@@ -4,6 +4,4 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 public class FromServiceAttribute : Attribute, IBindingSourceMetadata
 {
     public BindingSource BindingSource => BindingSource.Services;
-
-    public int PathSegmentIndex {get;set;}
 }

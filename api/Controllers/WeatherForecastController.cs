@@ -1,4 +1,5 @@
 using api.Services;
+using common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers;
@@ -16,7 +17,9 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet("GetWeatherForecast/{useCase}")]
-    public IEnumerable<WeatherForecast> Get([FromService(PathSegmentIndex =2)] IWeatherService weatherService)
+    [UseCaseAuthorize(UseCaseName.West, PolicyName = AuthPolicyName.WestCoastPolicy)]
+    [UseCaseAuthorize(UseCaseName.East, PolicyName = AuthPolicyName.EastCoastPolicy)]
+    public IEnumerable<WeatherForecast> Get([FromService] IWeatherService weatherService)
     {
         return weatherService.GetWeatherForecasts();
     }

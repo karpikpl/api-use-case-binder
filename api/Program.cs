@@ -1,4 +1,3 @@
-using api.Services;
 using api.Services.EastCoast;
 using api.Services.WestCoast;
 using common;
@@ -26,6 +25,12 @@ builder.Services.AddScoped<WestWeatherService>();
 
 // register all services for the use case
 builder.Services.AddHttpContextAccessor();
+
+// add the authorization policies
+builder.Services.AddCustomAuthorization(
+    AuthPolicy.EastCoastPolicy,
+    AuthPolicy.WestCoastPolicy
+);
 
 var app = builder.Build();
 

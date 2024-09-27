@@ -13,11 +13,9 @@ public enum UseCaseName
 public sealed class UseCaseAttribute : Attribute
 {
     public UseCaseName UseCase { get; }
-    public int PathSegmentIndex { get; }
 
-    public UseCaseAttribute(UseCaseName useCase, int pathSegmentIndex)
+    public UseCaseAttribute(UseCaseName useCase)
     {
         UseCase = useCase;
-        PathSegmentIndex = pathSegmentIndex;
     }
 }

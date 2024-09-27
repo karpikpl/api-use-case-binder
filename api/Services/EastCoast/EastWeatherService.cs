@@ -3,7 +3,7 @@ using common;
 
 namespace api.Services.EastCoast;
 
-[UseCase(UseCaseName.East, 2)]
+[UseCase(UseCaseName.East)]
 public class EastWeatherService : IWeatherService
 {
     private static readonly string[] Summaries = new[]

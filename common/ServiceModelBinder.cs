@@ -24,9 +24,7 @@ public class ServiceModelBinder : IModelBinder
 
          var fromServiceAttribute=    fromServiceAttributes?.FirstOrDefault() as FromServiceAttribute;
         
-        var pathIndex = fromServiceAttribute?.PathSegmentIndex;
-
-        var useCase = UseCaseProvider.GetUseCase(bindingContext.HttpContext, pathIndex ?? 0);
+        var useCase = UseCaseProvider.GetUseCase(bindingContext.HttpContext);
 
         if (useCase == UseCaseName.None)
         {

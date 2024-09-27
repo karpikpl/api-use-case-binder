@@ -4,7 +4,7 @@ using common;
 
 namespace api.Services.EastCoast;
 
-[UseCase(UseCaseName.West, 2)]
+[UseCase(UseCaseName.West)]
 public class WestWeatherService : IWeatherService
 {
     private static readonly string[] Summaries = new[]
